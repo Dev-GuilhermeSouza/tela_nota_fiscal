@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema de Nota Fiscal</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
@@ -93,17 +96,38 @@
 
 
 
-    <button onclick="salvarDados()">Salvar</button>
+    <button onclick="salvarDados()">Cadastrar Nota Fiscal</button>
   </div>
 
   <div id="successModal" class="modal">
     <div class="modal-content">
       <h2>✅ Sucesso!</h2>
-      <p>Os dados foram salvos com sucesso.</p>
+      <p>Os dados foram cadastrados com sucesso.</p>
       <button onclick="fecharModal()">Fechar</button>
     </div>
   </div>
 
+<div id="erroModal" class="modal">
+  <div class="modal-content">
+    <div class="icon-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" viewBox="0 0 48 48" fill="#b71c1c">
+        <path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 30q-.85 0-1.425-.575Q22 32.85 22 32q0-.85.575-1.425Q23.15 30 24 30q.85 0 1.425.575Q26 31.15 26 32q0 .85-.575 1.425Q24.85 34 24 34zm-2-20h4v12h-4z"/>
+      </svg>
+    </div>
+    <h2>Campos obrigatórios</h2>
+    <p>Preencha todos os campos antes de salvar.</p>
+    <button onclick="fecharErroModal()">OK</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
+

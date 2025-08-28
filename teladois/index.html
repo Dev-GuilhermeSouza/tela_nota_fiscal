@@ -1,41 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Controle de Notas Fiscais</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container">
-    <h2>Notas Fiscais</h2>
+    <div class="dashboard">
+      <div class="indicadores">
+        <div class="card">Total de Notas: <span id="totalNotas">0</span></div>
+        <div class="card">Valor Total: <span id="valorTotal">R$ 0,00</span></div>
+        <div class="card">Valor Médio: <span id="valorMedio">R$ 0,00</span></div>
+        <div class="card">Próximo Vencimento: <span id="proximoVencimento">--</span></div>
+        <div class="card">Maior Valor: <span id="maiorValor">--</span></div>
+        <div class="card">Menor Valor: <span id="menorValor">--</span></div>
+        <div class="card">Média de Dias Restantes: <span id="mediaDias">--</span></div>
+      </div>
 
-    <!-- Campo de busca -->
-    <div class="search-box">
-      <input type="text" id="busca" placeholder="Buscar notas...">
-    </div>
+      <select id="filtroStatus">
+        <option value="">Todos</option>
+        <option value="Pago">Pago</option>
+        <option value="Em aberto">Em aberto</option>
+        <option value="Atrasado">Atrasado</option>
+      </select>
 
-    <button id="btn-voltar-cadastro" class="botao-voltar">Cadastrar Nota Fiscal</button>
+      <div class="graficos">
+        <div class="grafico-bloco">
+          <h3>Distribuição de Status</h3>
+          <canvas id="graficoPizza"></canvas>
+          <div class="legenda-status">
+            <span class="status pago">Pago</span>
+            <span class="status aberto">Em aberto</span>
+            <span class="status atrasado">Atrasado</span>
+          </div>
+        </div>
+      </div>
 
+      <h2>Notas Fiscais</h2>
 
-    <div class="table-container">
-      <table id="tabela-nfs">
-  <thead>
-    <tr>
-      <th>Cliente</th>
-      <th>Serviço</th>
-      <th>Número da NF</th>
-      <th>Valor</th>
-      <th>Vencimento</th>
-      <th>Boleto</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Linhas preenchidas via JS -->
-  </tbody>
-</table>
+      <div class="search-box">
+        <input type="text" id="busca" placeholder="Buscar notas..." />
+      </div>
 
-      <div id="mensagem-vazia">Nenhuma nota encontrada</div>
+      <button id="btn-voltar-cadastro" class="botao-voltar">Cadastrar Nota Fiscal</button>
+
+      <div class="table-container">
+        <table id="tabela-nfs">
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Serviço</th>
+              <th>Número da NF</th>
+              <th>Valor</th>
+              <th>Vencimento</th>
+              <th>Boleto</th>
+              <th>Status</th>
+              <th>Dias restantes</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div id="mensagem-vazia">Nenhuma nota encontrada</div>
+      </div>
     </div>
   </div>
 
