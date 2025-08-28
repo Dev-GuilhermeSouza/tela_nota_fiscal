@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle de Notas Fiscais</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Notas Fiscais</h2>
+
+    <!-- Campo de busca -->
+    <div class="search-box">
+      <input type="text" id="busca" placeholder="Buscar notas...">
+    </div>
+
+    <button id="btn-voltar-cadastro" class="botao-voltar">Cadastrar Nota Fiscal</button>
+
+
+    <div class="table-container">
+      <table id="tabela-nfs">
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Serviço</th>
+      <th>Número da NF</th>
+      <th>Valor</th>
+      <th>Vencimento</th>
+      <th>Boleto</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Linhas preenchidas via JS -->
+  </tbody>
+</table>
+
+      <div id="mensagem-vazia">Nenhuma nota encontrada</div>
+    </div>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
