@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Nota Fiscal</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastro de Nota Fiscal</h1>
+
+    <section>
+      <h2>Tomador de Serviço</h2>
+      <label for="razao">Razão Social:</label>
+      <input type="text" id="razao" placeholder="Digite a razão social">
+
+      <label for="cliente">Cliente:</label>
+      <select id="cliente">
+        <option value="1">Empresa Alfa</option>
+        <option value="2">Empresa Beta</option>
+        <option value="3">Empresa Gama</option>
+      </select>
+
+      <label for="cnpj">CNPJ:</label>
+      <input type="text" id="cnpj" placeholder="Digite o CNPJ">
+    </section>
+
+    <section>
+      <h2>Dados do Serviço</h2>
+      <label for="descricao">Discriminação do Serviço:</label>
+      <textarea id="descricao" rows="4" placeholder="Descreva o serviço detalhadamente"></textarea>
+
+      <label for="valor">Valor do Serviço:</label>
+      <input type="number" id="valor" placeholder="Digite o valor">
+
+      <label for="aliquota">Alíquota:</label>
+      <input type="number" id="aliquota" value="0.2" readonly>
+
+      <label for="codigoServico">Código de Serviço:</label>
+      <select id="codigoServico">
+        <option value="101">101 - Consultoria</option>
+        <option value="102">102 - Desenvolvimento</option>
+        <option value="103">103 - Suporte Técnico</option>
+      </select>
+    </section>
+
+    <section>
+      <h2>Dados do Cliente (E-mail)</h2>
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" placeholder="Digite o e-mail do cliente">
+
+      <label for="assunto">Assunto:</label>
+      <input type="text" id="assunto" placeholder="Assunto do e-mail">
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" rows="3" placeholder="Corpo do e-mail"></textarea>
+    </section>
+
+    <section>
+      <h2>Parte Administrativa</h2>
+      <label for="nfNumero">Número da Nota Fiscal:</label>
+      <input type="text" id="nfNumero" readonly value="NF-001">
+
+      <label for="dataEmissao">Data de Emissão:</label>
+      <input type="date" id="dataEmissao">
+
+      <label for="situacao">Situação da Nota Fiscal:</label>
+      <select id="situacao">
+        <option value="pendente">Pendente</option>
+        <option value="emitida">Emitida</option>
+        <option value="cancelada">Cancelada</option>
+      </select>
+    </section>
+
+    <section>
+      <label for="EmitirBoleto">Emitir Boleto</label>
+      <select id="EmitirBoleto">
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+      </select>
+    </section>
+
+    <button onclick="salvarDados()">Salvar</button>
+  </div>
+
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <h2>✅ Sucesso!</h2>
+      <p>Os dados foram salvos com sucesso.</p>
+      <button onclick="fecharModal()">Fechar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
