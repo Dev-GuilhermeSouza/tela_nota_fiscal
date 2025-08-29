@@ -1,4 +1,3 @@
-/* Reset e base */
 * {
   margin: 0;
   padding: 0;
@@ -129,7 +128,7 @@ tbody tr:hover { background: #f9fafc; }
 
 td.dias-restantes {
   font-weight: bold;
-  color: #2084ad;
+  color: #2084ad; 
 }
 
 .status {
@@ -151,7 +150,6 @@ td.dias-restantes {
   font-style: italic;
 }
 
-/* Área analítica */
 .graficos {
   display: flex;
   gap: 28px;
@@ -162,9 +160,8 @@ td.dias-restantes {
 }
 
 .grafico-bloco {
-  background: #fff;
+  background: #ffffff00;
   border-radius: 8px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
   padding: 12px 14px;
   text-align: center;
   flex: 0 1 260px;
@@ -175,5 +172,48 @@ td.dias-restantes {
 
 .grafico-bloco h3 {
   color: #2084ad;
-  font-size: 1
+  font-size: 1;
 }
+
+#graficoPizza {
+  background-color: transparent;
+}
+
+.placares-status {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.card-status {
+  flex: 1;
+  min-width: 220px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-status:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.card-status h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card-status p {
+  margin: 6px 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.card-status.pago { background-color: #4CAF50; }
+.card-status.aberto { background-color: #FFC107; }
+.card-status.atrasado { background-color: #F44336; }

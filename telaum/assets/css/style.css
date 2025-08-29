@@ -166,7 +166,6 @@ button:active,
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Transição suave */
 .modal {
   display: none;
   position: fixed;
@@ -202,7 +201,6 @@ button:active,
   to { background: rgba(0,0,0,0.5); }
 }
 
-/* Ícone de aviso */
 .icon-wrapper {
   margin-bottom: 10px;
 }
@@ -210,4 +208,10 @@ button:active,
 .icon-wrapper svg {
   width: 48px;
   height: 48px;
+}
+
+
+.campo-erro {
+  border: 2px solid red !important;
+  background-color: #ffe6e6;
 }
