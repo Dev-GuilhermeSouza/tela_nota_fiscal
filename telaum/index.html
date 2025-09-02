@@ -6,8 +6,8 @@
   <title>Sistema de Nota Fiscal</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
@@ -16,26 +16,22 @@
     <section>
       <h2>Tomador de Serviço</h2>
 
-            <label for="cliente">Cliente:</label>
+      <label for="cliente">Cliente:</label>
       <select id="cliente">
-    <option value="1">Agencia SGZ</option>
-    <option value="2">Herah</option>
-    <option value="3">Instituto Moderação</option>
-    <option value="5">Moodi</option>
-    <option value="6">NewGuiaBR</option>
-    <option value="7">Renascer</option>
-    <option value="8">Saudabe</option>
-    <option value="9">Digpay</option>
-    <option value="10">Evolve Soluções Tecnológicas</option>
-    <option value="11">Ghisso Companny</option>
-    <option value="12">Qualibra</option>
-
+        <option value="">Selecione...</option>
+        <option value="1" data-razao="Agencia SGZ LTDA" data-cnpj="12.345.678/0001-11">Agencia SGZ</option>
+        <option value="2" data-razao="Herah Soluções Digitais LTDA" data-cnpj="98.765.432/0001-22">Herah</option>
+        <option value="3" data-razao="Instituto Moderação Associação" data-cnpj="45.678.123/0001-33">Instituto Moderação</option>
+        <option value="5" data-razao="Moodi Tecnologia LTDA" data-cnpj="56.789.234/0001-44">Moodi</option>
+        <option value="6" data-razao="NewGuiaBR Serviços Online LTDA" data-cnpj="67.890.345/0001-55">NewGuiaBR</option>
+        <option value="7" data-razao="Renascer Beneficente" data-cnpj="78.901.456/0001-66">Renascer</option>
+        <option value="8" data-razao="Saudabe Saúde e Bem Estar LTDA" data-cnpj="89.012.567/0001-77">Saudabe</option>
+        <option value="9" data-razao="Digpay Pagamentos Digitais LTDA" data-cnpj="90.123.678/0001-88">Digpay</option>
+        <option value="10" data-razao="Evolve Soluções Tecnológicas LTDA" data-cnpj="11.234.789/0001-99">Evolve Soluções Tecnológicas</option>
       </select>
 
       <label for="razao">Razão Social:</label>
       <input type="text" id="razao" placeholder="Digite a razão social">
-
-
 
       <label for="cnpj">CNPJ:</label>
       <input type="text" id="cnpj" placeholder="Digite o CNPJ">
@@ -61,53 +57,8 @@
         <option value="07285">07285 - Instalação e montagem de aparelhos, máquinas e equipamentos.</option>
         <option value="07498">07498 - Conserto, restauração, manutenção e conservação de máquinas, equipamentos, elevadores e congêneres.</option>
         <option value="99999">Outros Serviços</option>
-
       </select>
     </section>
-
-    <section>
-      <h2>Dados do Cliente (E-mail)</h2>
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" placeholder="Digite o e-mail do cliente">
-
-      <label for="assunto">Assunto:</label>
-      <input type="text" id="assunto" placeholder="Assunto do e-mail">
-
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="mensagem" rows="3" placeholder="Corpo do e-mail"></textarea>
-    </section>
-
-    <section>
-      <h2>Boleto</h2>
-      <div class="container__boleto">
-      <label for="EmitirBoleto">Emitir Boleto</label>
-      <select id="EmitirBoleto">
-        <option value="sim">Sim</option>
-        <option value="nao">Não</option>
-      </select>
-
-            <label for="dataEmissao">Data de Vencimento:</label>
-      <input type="date" id="dataVencimento">
-      </div>
-    </section>
-
-
-    <section>
-      <h2>Parte Administrativa</h2>
-      <label for="nfNumero">Número da Nota Fiscal:</label>
-      <input type="text" id="nfNumero" readonly value="NF-001">
-
-      <label for="dataEmissao">Data de Emissão:</label>
-      <input type="date" id="dataEmissao">
-
-      <label for="situacao">Situação da Nota Fiscal:</label>
-      <select id="situacao">
-        <option value="pendente">Pendente</option>
-        <option value="emitida">Emitida</option>
-        <option value="cancelada">Cancelada</option>
-      </select>
-    </section>
-
 
 
     <button onclick="salvarDados()">Cadastrar Nota Fiscal</button>
@@ -121,27 +72,30 @@
     </div>
   </div>
 
-<div id="erroModal" class="modal">
-  <div class="modal-content">
-    <div class="icon-wrapper">
-      <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" viewBox="0 0 48 48" fill="#b71c1c">
-        <path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 30q-.85 0-1.425-.575Q22 32.85 22 32q0-.85.575-1.425Q23.15 30 24 30q.85 0 1.425.575Q26 31.15 26 32q0 .85-.575 1.425Q24.85 34 24 34zm-2-20h4v12h-4z"/>
-      </svg>
+  <div id="erroModal" class="modal">
+    <div class="modal-content">
+      <div class="icon-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" viewBox="0 0 48 48" fill="#b71c1c">
+          <path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 30q-.85 0-1.425-.575Q22 32.85 22 32q0-.85.575-1.425Q23.15 30 24 30q.85 0 1.425.575Q26 31.15 26 32q0 .85-.575 1.425Q24.85 34 24 34zm-2-20h4v12h-4z"/>
+        </svg>
+      </div>
+      <h2>Campos obrigatórios</h2>
+      <p>Preencha todos os campos antes de salvar.</p>
+      <button onclick="fecharErroModal()">OK</button>
     </div>
-    <h2>Campos obrigatórios</h2>
-    <p>Preencha todos os campos antes de salvar.</p>
-    <button onclick="fecharErroModal()">OK</button>
   </div>
-</div>
 
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="assets/js/script.js"></script>
+
+  <script>
+    document.getElementById('cliente').addEventListener('change', function () {
+      const selected = this.options[this.selectedIndex];
+      const razao = selected.getAttribute('data-razao') || '';
+      const cnpj = selected.getAttribute('data-cnpj') || '';
+      document.getElementById('razao').value = razao;
+      document.getElementById('cnpj').value = cnpj;
+    });
+  </script>
 </body>
 </html>
-
