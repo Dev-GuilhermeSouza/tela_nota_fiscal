@@ -198,7 +198,7 @@ thVencimento.addEventListener("click", () => {
 });
 
 document.getElementById("btn-voltar-cadastro").addEventListener("click", () => {
-  window.location.href = "../telaum/index.html";
+  window.location.href = "telaum/index.html";
 });
 
 atualizarDashboard(notas);
