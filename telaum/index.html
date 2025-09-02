@@ -13,9 +13,9 @@
   <div class="container">
     <h1>Cadastro de Nota Fiscal</h1>
 
+    <!-- Tomador de Serviço -->
     <section>
       <h2>Tomador de Serviço</h2>
-
       <label for="cliente">Cliente:</label>
       <select id="cliente">
         <option value="">Selecione...</option>
@@ -37,6 +37,7 @@
       <input type="text" id="cnpj" placeholder="Digite o CNPJ">
     </section>
 
+    <!-- Dados do Serviço -->
     <section>
       <h2>Dados do Serviço</h2>
       <label for="descricao">Discriminação do Serviço:</label>
@@ -60,10 +61,56 @@
       </select>
     </section>
 
+    <!-- Dados do Cliente (E-mail) -->
+    <section>
+      <h2>Dados do Cliente (E-mail)</h2>
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" placeholder="Digite o e-mail do cliente">
 
+      <label for="assunto">Assunto:</label>
+      <input type="text" id="assunto" placeholder="Assunto do e-mail">
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" rows="3" placeholder="Corpo do e-mail"></textarea>
+    </section>
+
+    <!-- Boleto -->
+    <section>
+      <h2>Boleto</h2>
+      <div class="container__boleto">
+        <label for="EmitirBoleto">Emitir Boleto:</label>
+        <select id="EmitirBoleto">
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+
+        <label for="dataVencimento">Data de Vencimento:</label>
+        <input type="date" id="dataVencimento">
+      </div>
+    </section>
+
+    <!-- Parte Administrativa -->
+    <section>
+      <h2>Parte Administrativa</h2>
+      <label for="nfNumero">Número da Nota Fiscal:</label>
+      <input type="text" id="nfNumero" readonly value="NF-001">
+
+      <label for="dataEmissao">Data de Emissão:</label>
+      <input type="date" id="dataEmissao">
+
+      <label for="situacao">Situação da Nota Fiscal:</label>
+      <select id="situacao">
+        <option value="pendente">Pendente</option>
+        <option value="emitida">Emitida</option>
+        <option value="cancelada">Cancelada</option>
+      </select>
+    </section>
+
+    <!-- Botão de cadastro -->
     <button onclick="salvarDados()">Cadastrar Nota Fiscal</button>
   </div>
 
+  <!-- Modal de sucesso -->
   <div id="successModal" class="modal">
     <div class="modal-content">
       <h2>✅ Sucesso!</h2>
@@ -72,6 +119,7 @@
     </div>
   </div>
 
+  <!-- Modal de erro -->
   <div id="erroModal" class="modal">
     <div class="modal-content">
       <div class="icon-wrapper">
@@ -85,9 +133,7 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="assets/js/script.js"></script>
-
   <script>
     document.getElementById('cliente').addEventListener('change', function () {
       const selected = this.options[this.selectedIndex];
